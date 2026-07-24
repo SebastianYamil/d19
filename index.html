@@ -195,6 +195,18 @@ em{font-style:italic}
   box-shadow:0 10px 28px rgba(201,162,75,.25);
   background:linear-gradient(#fff,#FDF8EE);
 }
+.tinner{flex:1;display:flex;flex-direction:column;gap:6px}
+.tloc{font-size:.78rem;font-weight:600}
+.tloc a{
+  color:var(--dorado);text-decoration:none;border-bottom:1px dotted var(--dorado);
+  -webkit-tap-highlight-color:transparent;
+}
+.tloc a:active{opacity:.6}
+.tphotos{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.tphotos img{
+  width:100%;max-width:100%;border-radius:12px;display:block;
+  box-shadow:0 6px 16px rgba(122,46,74,.18);
+}
 .tcard.star .tdot{background:var(--dorado)}
 .tcard.star .thora{color:var(--dorado)}
 #btnWa{
@@ -310,7 +322,7 @@ em{font-style:italic}
 <!-- ============ ESTADO 4 — EL CRONOGRAMA ============ -->
 <section class="screen" id="s4">
   <h1>Domingo 19 de julio · <em>Nuestro plan</em></h1>
-  <p class="sub">Las horas son reales. Los lugares… son una sorpresa.</p>
+  <p class="sub">Las horas fueron reales. Los lugares… ya los conoces.</p>
   <!-- Filigrana barroca -->
   <svg class="filigree" width="180" height="18" viewBox="0 0 180 18" aria-hidden="true">
     <g fill="none" stroke="#C9A24B" stroke-width="1.4" stroke-linecap="round">
@@ -589,20 +601,37 @@ var ICONS = {
   cubiertos: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7A2E4A" stroke-width="1.8" stroke-linecap="round"><path d="M6 3 V9 M4 3 V7 M8 3 V7 M6 9 V21"/><path d="M16 3 C14.5 3 14 5.5 14 8 C14 10 15 11 16 11 V21 M16 3 C17.5 3 18 5.5 18 8"/><path d="M12 15.5 C10.8 14.4 12 12.6 13.2 13.6 L12 15 L10.8 13.6 C12 12.6 13.2 14.4 12 15.5Z" fill="#E58FAD" stroke="#E58FAD" stroke-width="1"/></svg>',
   desayuno: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15 C2.5 13.5 3 11 5.5 10.5 L9.5 9.2 C10.5 9 11 9.5 10.8 10.5 L10 14 C9.6 16 7.5 17 6 16.2 Z"/><path d="M9.5 9.2 L14.5 7.8 C15.5 7.5 16.2 8 16 9 L15.2 12.8 C14.9 14.2 13.5 15 12.2 14.6 M14.5 7.8 L18.5 6.6 C20.8 6 22 8.2 21 10 L19.2 12.6 C18.3 13.9 16.5 14 15.6 13" opacity=".9"/><path d="M7.5 19.5 q4.5 1.6 9 0" stroke="#E58FAD"/></svg>',
   columna: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7A2E4A" stroke-width="1.6" stroke-linecap="round"><path d="M5 4 H19 M6 7 H18 M6 20 H18 M5 22.5 H19" stroke-width="1.8"/><path d="M9 7 V20 M12 7 V20 M15 7 V20"/><path d="M7 4 q2 -2.5 5 0 q3 -2.5 5 0" stroke="#C9A24B"/></svg>',
-  taza: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7A2E4A" stroke-width="1.8" stroke-linecap="round"><path d="M5 10 H17 V17 A4 4 0 0 1 13 21 H9 A4 4 0 0 1 5 17 Z"/><path d="M17 12 H19 A2.5 2.5 0 0 1 19 17 H17"/><path d="M8.5 3.5 q1.5 2 0 4 M12.5 3.5 q1.5 2 0 4" stroke="#E58FAD"/></svg>',
+  legorosa: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><g fill="#E58FAD"><rect x="8" y="3" width="8" height="4" rx="1"/><rect x="6" y="7.5" width="12" height="4" rx="1" fill="#E9C3CF"/><rect x="8.5" y="12" width="7" height="3" rx="1"/></g><g fill="#F3D9E1"><circle cx="10.5" cy="2.8" r="1"/><circle cx="13.5" cy="2.8" r="1"/></g><path d="M12 15 V21 M12 18 q3.2 -.8 4.2 -3" stroke="#7A2E4A" stroke-width="1.6" stroke-linecap="round"/><path d="M12 19 q-2.8 -.6 -3.8 -2.6" stroke="#7A2E4A" stroke-width="1.6" stroke-linecap="round"/></svg>',
   flor: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="2.2" fill="#C9A24B"/><g fill="#E58FAD"><ellipse cx="12" cy="4.5" rx="2" ry="3"/><ellipse cx="7.8" cy="7" rx="2" ry="3" transform="rotate(-65 7.8 7)"/><ellipse cx="16.2" cy="7" rx="2" ry="3" transform="rotate(65 16.2 7)"/><ellipse cx="9" cy="12" rx="2" ry="3" transform="rotate(-130 9 12)"/><ellipse cx="15" cy="12" rx="2" ry="3" transform="rotate(130 15 12)"/></g><path d="M12 13 V21 M12 17 q3 -1 4 -3" stroke="#7A2E4A" stroke-width="1.6" stroke-linecap="round"/></svg>'
 };
 
 var PLAN = [
-  { h:'09:00', t:'Paso por ti. Trae zapatos cómodos, cero prisa… y prepárate para la primera sorpresa del día.', i:'corazon' },
-  { h:'10:00', t:'Desayuno con vista a una plaza que te va a encantar.', i:'desayuno' },
+  { h:'09:00', t:'Paso por ti. Trae zapatos cómodos, cero prisa… y prepárate para la primera sorpresa del día.', i:'corazon',
+    loc:'La primera sorpresa: lirios rosas, en tu puerta',
+    photos:['fotos/lirios.jpg'] },
+  { h:'10:00', t:'Desayuno con vista a una plaza que te va a encantar.', i:'desayuno',
+    loc:'Saks · Plaza San Jacinto 9, San Ángel',
+    maps:'https://www.google.com/maps/search/?api=1&query=Saks+San+%C3%81ngel%2C+Plaza+San+Jacinto+9%2C+San+%C3%81ngel%2C+CDMX' },
   { h:'11:05', t:'Rumbo al sur de la ciudad. Confía.', i:'brujula' },
-  { h:'12:00', t:'CONCIERTO — Orquesta Sinfónica de Minería, Sala Silvestre Revueltas (Centro Cultural Ollin Yoliztli). En el programa: el "Capricho italiano" de Chaikovski, "Altar de viento" de Gabriela Ortiz y las "Variaciones Enigma" de Elgar. Los boletos ya existen. Son reales. Ya son nuestros.', i:'musica', star:true },
-  { h:'14:10', t:'Nos escapamos a un rincón de calles empedradas.', i:'huellas' },
-  { h:'14:40', t:'Comida en un lugar que elegí pensando exactamente en ti · Col. San Ángel.', i:'cubiertos' },
-  { h:'16:15', t:'Algo barroco que tienes que ver con tus propios ojos.', i:'columna' },
-  { h:'17:10', t:'Algo dulce. No pregunto si quieres porque sé que sí.', i:'taza' },
-  { h:'18:00', t:'Caminamos, y hay una sorpresa más. La última. Lo prometo.', i:'flor' }
+  { h:'12:00', t:'CONCIERTO — Orquesta Sinfónica de Minería, Sala Silvestre Revueltas (Centro Cultural Ollin Yoliztli). En el programa: el "Capricho italiano" de Chaikovski, "Altar de viento" de Gabriela Ortiz y las "Variaciones Enigma" de Elgar. Los boletos ya existen. Son reales. Ya son nuestros.', i:'musica', star:true,
+    loc:'Centro Cultural Ollin Yoliztli · Periférico Sur 5141',
+    maps:'https://www.google.com/maps/search/?api=1&query=Centro+Cultural+Ollin+Yoliztli%2C+Perif%C3%A9rico+Sur+5141%2C+CDMX' },
+  { h:'14:10', t:'Nos escapamos a un rincón de calles empedradas.', i:'huellas',
+    loc:'San Ángel',
+    maps:'https://www.google.com/maps/search/?api=1&query=San+%C3%81ngel%2C+%C3%81lvaro+Obreg%C3%B3n%2C+CDMX' },
+  { h:'14:40', t:'Comida en un lugar que elegí pensando exactamente en ti · Col. San Ángel.', i:'cubiertos',
+    loc:'Pentolino · Av. de la Paz 57',
+    maps:'https://www.google.com/maps/search/?api=1&query=Pentolino%2C+Av.+de+la+Paz+57%2C+San+%C3%81ngel%2C+CDMX' },
+  { h:'16:15', t:'Algo barroco que tienes que ver con tus propios ojos.', i:'columna',
+    loc:'Museo Casa del Risco · Plaza San Jacinto 15',
+    maps:'https://www.google.com/maps/search/?api=1&query=Museo+Casa+del+Risco%2C+Plaza+San+Jacinto+15%2C+CDMX' },
+  { h:'17:10', t:'Rosas rosas — de las que se arman pétalo a pétalo, entre los dos, en el pasto.', i:'legorosa',
+    loc:'Parque de la Bombilla',
+    maps:'https://www.google.com/maps/search/?api=1&query=Parque+de+la+Bombilla%2C+San+%C3%81ngel%2C+CDMX',
+    photos:['fotos/lego-1.jpg','fotos/lego-2.jpg'] },
+  { h:'18:00', t:'Caminamos, y hay una sorpresa más. La última. Lo prometo.', i:'flor',
+    loc:'Las empedradas de San Ángel',
+    maps:'https://www.google.com/maps/search/?api=1&query=Plaza+de+los+Arc%C3%A1ngeles%2C+San+%C3%81ngel%2C+CDMX' }
 ];
 
 (function(){
@@ -614,9 +643,41 @@ var PLAN = [
     var body = document.createElement('div');
     body.className = 'tbody';
     body.innerHTML = ICONS[it.i];
+    var inner = document.createElement('div');
+    inner.className = 'tinner';
     var txt = document.createElement('span');
     txt.textContent = it.t;
-    body.appendChild(txt);
+    inner.appendChild(txt);
+    if(it.loc){
+      var locEl = document.createElement('div');
+      locEl.className = 'tloc';
+      if(it.maps){
+        var a = document.createElement('a');
+        a.href = it.maps;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = '📍 ' + it.loc;
+        locEl.appendChild(a);
+      } else {
+        locEl.textContent = '🌸 ' + it.loc;
+        locEl.style.color = 'var(--rosa-lirio)';
+      }
+      inner.appendChild(locEl);
+    }
+    if(it.photos){
+      var ph = document.createElement('div');
+      ph.className = 'tphotos';
+      for(var k=0;k<it.photos.length;k++){
+        var img = document.createElement('img');
+        img.src = it.photos[k];
+        img.alt = '';
+        img.loading = 'lazy';
+        img.onerror = function(){ this.parentNode.removeChild(this); };
+        ph.appendChild(img);
+      }
+      inner.appendChild(ph);
+    }
+    body.appendChild(inner);
     var hora = document.createElement('div');
     hora.className = 'thora';
     hora.textContent = it.h;
